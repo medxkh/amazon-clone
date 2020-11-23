@@ -1,23 +1,24 @@
 import React from "react";
 import "./Product.css";
 
-function Product({ title, img, rating }) {
+function Product({ title, price, img, rating }) {
   return (
     <div className="product">
       <div className="product__info">
-        <p>The lean startup</p>
+        <p> {title} </p>
         <p className="product__price">
           <small>$</small>
-          <strong>19.5</strong>
+          <strong> {price} </strong>
         </p>
-        <div classname="product__rating">
-          <p>⭐</p>
+        <div classname="product__rating" style={{ display: "flex" }}>
+          {Array(rating)
+            .fill()
+            .map((_, i) => (
+              <p>⭐</p>
+            ))}
         </div>
       </div>
-      <img
-        src="https://image.shutterstock.com/image-photo/retro-interior-design-living-room-600w-1656451228.jpg"
-        alt=""
-      ></img>
+      <img src={img} alt=""></img>
       <button>add to basket</button>
     </div>
   );

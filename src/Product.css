@@ -1,3 +1,9 @@
+.product__rating > p {
+  display: flex;
+}
+.product__rating {
+  display: flex;
+}
 .product {
   display: flex;
   flex-direction: column;
@@ -11,6 +17,7 @@
   background-color: white;
   z-index: 1;
 }
+
 .product > img {
   max-height: 200px;
   width: 100%;
@@ -18,10 +25,10 @@
   margin-bottom: 15px;
 }
 .product > button {
-  background: #f5a105;
+  background: #e49a11;
   border: 1px solid;
   margin-top: 10px;
-  border-color: orange;
+  border-color: rgb(5, 4, 2);
   color: black;
 }
 .product__info {
