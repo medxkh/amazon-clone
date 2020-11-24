@@ -12,16 +12,34 @@ function Home() {
           alt=""
         />
         <div className="home__row">
-          <Product title="the lean strat app" price={19.99} img="" rating={3} />
-          <Product title="lopsdkd" price={17.8} img="" rating="" />
+          <Product
+            id="1234567"
+            title="the lean strat app"
+            price={19.99}
+            img=""
+            rating={3}
+          />
+          <Product id="1234568" title="lopsdkd" price={17.8} img="" rating="" />
         </div>
         <div className="home__row">
-          <Product title="lopsdkd" price={565.5} img="" rating="" />
-          <Product title="lopsdkd" price={50.7} img="" rating="" />
-          <Product title="lopsdkd" price={999} img="" rating="" />
+          <Product
+            id="1234569"
+            title="lopsdkd"
+            price={565.5}
+            img=""
+            rating=""
+          />
+          <Product id="1234565" title="lopsdkd" price={50.7} img="" rating="" />
+          <Product id="1234564" title="lopsdkd" price={999} img="" rating="" />
         </div>
         <div className="home__row">
-          <Product title="lopsdkd" price={290.9} img="" rating="" />
+          <Product
+            id="1234563"
+            title="lopsdkd"
+            price={290.9}
+            img=""
+            rating=""
+          />
         </div>
       </div>
     </div>
