@@ -1,6 +1,7 @@
 .checkout__ad {
   width: 100%;
   max-height: 150px;
+  object-fit: contain;
 
   margin-bottom: 10px;
 }
