@@ -9,12 +9,19 @@ import { getBasketTotal } from "./reducer";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
+  const [succeeded, setSucceeded] = useState(false);
+  const [processing, setProcessing] = useState("");
+
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState(true);
 
-  const handleSumbit = (e) => {};
+  const handleSumbit = async (event) => {
+    event.preventDefault();
+    setProcessing(true);
+  };
   const handleChange = (event) => {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
@@ -67,7 +74,12 @@ function Payment() {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
+                <button disabled={processing || disabled || succeeded}>
+                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                </button>
               </div>
+              {/* Errors */}
+              {error && <div>{error}</div>}
             </from>
           </div>
         </div>
