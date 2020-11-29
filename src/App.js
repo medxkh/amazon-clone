@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import Payment from "./Payment";
+import Orders from "./Orders";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
-import Payment from "./Payment";
-import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import Orders from "./Orders";
+import { Elements } from "@stripe/react-stripe-js";
 
 const promise = loadStripe(
   "pk_test_51Hs71kDKxXMS8a9qffmapAGwGfsmy7wyf1jV9jRJGvwWiSob682ip3YmMBJgvMjEsOrnntHHUWhMtaQptGYmGfB300vBNi3SSK"
@@ -41,15 +41,17 @@ function App() {
       }
     });
   }, []);
+
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Switch>
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
-          </Route>
-          <Route path="/orders">
-            <Orders />
           </Route>
           <Route path="/checkout">
             <Header />
